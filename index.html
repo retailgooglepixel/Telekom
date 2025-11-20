@@ -111,7 +111,6 @@
     /* Dekorative Bilder */
     .hero-img {
       position: absolute;
-      bottom: 0;
       z-index: 1; /* Hinter dem Text */
       width: auto;
       pointer-events: none; /* Klicks gehen durch */
@@ -119,31 +118,35 @@
     }
 
     .hero-img-left {
-      left: 5%; /* 30% näher zur Mitte gerückt (vorher -20px) */
+      left: 5%; 
+      bottom: 0;
       max-height: 350px;
       max-width: 25vw;
     }
 
+    /* RECHTES BILD: MASSIV VERGRÖßERT & TIEFER GESETZT */
     .hero-img-right {
-      right: 5%; /* 30% näher zur Mitte gerückt (vorher -20px) */
-      max-height: 500px; /* Höhe erhöht für das Vergrößern */
-      max-width: 42vw;   /* Breite deutlich erhöht (vorher 30vw) */
+      right: -5%;      /* Etwas weiter rausgeschoben für besseren Anschnitt */
+      bottom: -450px;  /* Stark nach unten gezogen, damit es nicht zu hoch sitzt */
+      max-height: 1100px; /* Riesig (+40%) */
+      max-width: 85vw;   
     }
 
     /* Mobile Anpassung für Bilder */
     @media (max-width: 768px) {
       .hero-img {
-        opacity: 0.25; /* Bilder noch etwas blasser, damit Text lesbar bleibt */
+        opacity: 0.25; 
       }
-      /* Auf Handy wieder etwas nach außen schieben, damit sie nicht alles verdecken */
       .hero-img-left { 
         left: -10px; 
         max-height: 220px;
+        bottom: 0;
       }
       .hero-img-right { 
-        right: -20px; 
-        max-height: 250px;
-        max-width: 50vw;
+        right: -60px; 
+        bottom: -80px;
+        max-height: 450px; /* Auch mobil größer */
+        max-width: 70vw;
       }
       
       .hero span { font-size: 3rem; }
@@ -416,7 +419,7 @@
     <!-- BILD LINKS -->
     <img src="https://i.postimg.cc/Dwd1VwJD/image-from-rawpixel-id-6167453-png.png" alt="Abstract Left" class="hero-img hero-img-left">
     
-    <!-- BILD RECHTS (Vergrößert) -->
+    <!-- BILD RECHTS (Stark Vergrößert & Tiefer) -->
     <img src="https://i.postimg.cc/hGz9hW2s/famili.png" alt="Family Right" class="hero-img hero-img-right">
 
     <h1>Pixel 10 Training<br><span>Bonn 2025</span></h1>
@@ -647,47 +650,4 @@
         card.classList.toggle('active');
         
         if (card.classList.contains('active')) {
-          body.style.maxHeight = body.scrollHeight + "px";
-        } else {
-          body.style.maxHeight = 0;
-        }
-      });
-    });
-
-    // Form Submission Logic for External Hosting (GitHub)
-    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const btn = this.querySelector('.btn-submit');
-      const originalText = btn.innerText;
-      btn.innerText = 'Sende...';
-      btn.disabled = true;
-
-      const formData = {
-        rating: this.rating.value,
-        feedback: this.feedback.value
-      };
-
-      fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors', 
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-      .then(() => {
-        // Da wir 'no-cors' nutzen, gehen wir davon aus, dass es geklappt hat,
-        // wenn kein Netzwerkfehler auftritt.
-        document.getElementById('feedbackForm').style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        btn.innerText = 'Fehler. Bitte erneut versuchen.';
-        btn.disabled = false;
-      });
-    });
-  </script>
-</body>
-</html>
+          body.styl
