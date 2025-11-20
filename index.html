@@ -77,8 +77,8 @@
       text-align: center;
       padding: 80px 20px;
       background: linear-gradient(180deg, #ffffff 0%, var(--bg-color) 100%);
-      position: relative; /* Wichtig für die Bilder */
-      overflow: hidden;   /* Damit Bilder nicht scrollen erzeugen */
+      position: relative; 
+      overflow: hidden;   
     }
 
     h1 {
@@ -112,32 +112,41 @@
     .hero-img {
       position: absolute;
       bottom: 0;
-      z-index: 1;
-      max-height: 350px; /* Maximale Höhe */
+      z-index: 1; /* Hinter dem Text */
       width: auto;
       pointer-events: none; /* Klicks gehen durch */
+      transition: all 0.3s ease;
     }
 
     .hero-img-left {
-      left: -20px;
-      max-width: 25vw; /* Max 25% der Bildschirmbreite */
+      left: 5%; /* 30% näher zur Mitte gerückt (vorher -20px) */
+      max-height: 350px;
+      max-width: 25vw;
     }
 
     .hero-img-right {
-      right: -20px;
-      max-width: 30vw;
+      right: 5%; /* 30% näher zur Mitte gerückt (vorher -20px) */
+      max-height: 500px; /* Höhe erhöht für das Vergrößern */
+      max-width: 42vw;   /* Breite deutlich erhöht (vorher 30vw) */
     }
 
     /* Mobile Anpassung für Bilder */
     @media (max-width: 768px) {
       .hero-img {
-        opacity: 0.3; /* Bilder blasser machen auf Handy */
-        max-height: 200px;
+        opacity: 0.25; /* Bilder noch etwas blasser, damit Text lesbar bleibt */
       }
-      .hero-img-left { left: -50px; }
-      .hero-img-right { right: -50px; }
+      /* Auf Handy wieder etwas nach außen schieben, damit sie nicht alles verdecken */
+      .hero-img-left { 
+        left: -10px; 
+        max-height: 220px;
+      }
+      .hero-img-right { 
+        right: -20px; 
+        max-height: 250px;
+        max-width: 50vw;
+      }
       
-      .hero span { font-size: 3rem; } /* Text etwas kleiner auf Handy */
+      .hero span { font-size: 3rem; }
     }
 
     /* --- Content Grid --- */
@@ -407,7 +416,7 @@
     <!-- BILD LINKS -->
     <img src="https://i.postimg.cc/Dwd1VwJD/image-from-rawpixel-id-6167453-png.png" alt="Abstract Left" class="hero-img hero-img-left">
     
-    <!-- BILD RECHTS -->
+    <!-- BILD RECHTS (Vergrößert) -->
     <img src="https://i.postimg.cc/hGz9hW2s/famili.png" alt="Family Right" class="hero-img hero-img-right">
 
     <h1>Pixel 10 Training<br><span>Bonn 2025</span></h1>
