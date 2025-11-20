@@ -192,6 +192,34 @@
     a { color: var(--t-magenta); text-decoration: none; font-weight: 500; }
     a:hover { text-decoration: underline; }
 
+    /* Styling für die detaillierten Listen */
+    .detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .detail-list li {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+    .detail-list li:last-child { border-bottom: none; }
+    .detail-title {
+      font-weight: 700;
+      color: var(--t-grey);
+      display: block;
+      margin-bottom: 5px;
+    }
+    .example-box {
+      background: #f4f7fc;
+      border-left: 3px solid var(--g-blue);
+      padding: 10px;
+      font-size: 0.9rem;
+      margin-top: 5px;
+      border-radius: 0 8px 8px 0;
+      color: #444;
+    }
+
     /* --- Feedback Section --- */
     .feedback-section {
       background: white;
@@ -324,13 +352,22 @@
     </div>
 
     <div class="card">
-      <div class="card-header">Unterschiede: Gemini vs. ChatGPT vs. Apple Intelligence <div class="toggle-icon">+</div></div>
+      <div class="card-header">Detailvergleich: Gemini vs. Wettbewerb <div class="toggle-icon">+</div></div>
       <div class="card-body">
-        <span class="answer-tag">Wettbewerb</span>
-        <ul>
-          <li><strong>Gemini:</strong> Ist "Multimodal Native" (versteht Video, Bild, Ton gleichzeitig) und tief in Google Workspace (Docs, Drive) integriert.</li>
-          <li><strong>Apple Intelligence:</strong> Läuft teils lokal, teils in der "Private Cloud Compute". Gemini hat oft das breitere "Weltwissen".</li>
-          <li><strong>ChatGPT:</strong> Stark im Chat, aber weniger tief in dein Smartphone-Betriebssystem (Wecker stellen, Apps steuern) integriert als Gemini auf dem Pixel 10.</li>
+        <span class="answer-tag">Wettbewerb & Abgrenzung</span>
+        <ul class="detail-list">
+          <li>
+            <span class="detail-title">🤖 Gemini vs. ChatGPT</span>
+            ChatGPT ist ein exzellenter "Chat-Partner". Gemini hingegen ist ein <strong>"System-Agent"</strong>. Gemini kann auf dem Pixel 10 tief in deine Apps greifen ("Finde die PDF in meinen Mails, fasse sie zusammen und speichere das in Drive"). ChatGPT ist meistens "draußen" und isoliert.
+          </li>
+          <li>
+            <span class="detail-title">🍎 Gemini vs. Apple Intelligence</span>
+            Apple setzt stark auf Datenschutz durch lokale Verarbeitung, aber das Wissen ist oft begrenzt (Siri muss oft an ChatGPT übergeben). <strong>Gemini Nano</strong> (auf dem Pixel 10) bietet beides: Lokale Verarbeitung für Sensibles PLUS das riesige Weltwissen von Google in der Cloud, ohne dass du den Assistenten wechseln musst.
+          </li>
+          <li>
+            <span class="detail-title">🌌 Gemini vs. Galaxy AI</span>
+            Samsung ist ein Partner und nutzt Google Cloud. Aber: Das Pixel 10 erhält neue KI-Features oft Monate früher (Feature Drops) und die Kamera-KI (z.B. Video Boost) ist speziell auf den Tensor-Chip abgestimmt, nicht auf Snapdragon.
+          </li>
         </ul>
       </div>
     </div>
@@ -345,7 +382,52 @@
       </div>
     </div>
 
-    <!-- SECTION 2: Technik & Abos -->
+    <!-- SECTION 2: Praxis & Job -->
+    <div class="section-title"><span class="section-icon">💼</span> Gemini im Job-Alltag</div>
+
+    <div class="card">
+      <div class="card-header">Konkrete Anwendungsbeispiele für dich & Kunden <div class="toggle-icon">+</div></div>
+      <div class="card-body">
+        <span class="answer-tag">Use Cases</span>
+        <p>Wie Gemini den Arbeitsalltag bei der Telekom oder bei B2B-Kunden erleichtert:</p>
+        
+        <ul class="detail-list">
+          <li>
+            <span class="detail-title">✍️ Texte verfassen (Vertrieb & Service)</span>
+            Spart Zeit bei schwierigen E-Mails.
+            <div class="example-box">
+              <em>Prompt:</em> "Antworte auf diese Beschwerde-Mail eines Geschäftskunden, dessen Glasfaser-Anschluss verzögert ist. Sei höflich, erkläre, dass es an Tiefbauarbeiten liegt, und biete als Entschuldigung ein Daten-Upgrade für seine Mobilfunkkarten an."
+            </div>
+          </li>
+          
+          <li>
+            <span class="detail-title">🎨 Bilder erstellen (Visualisierung)</span>
+            Hilft B2B-Kunden oder im Marketing, Ideen sichtbar zu machen.
+            <div class="example-box">
+               <em>Prompt:</em> "Erstelle ein fotorealistisches Bild eines modernen Telekom-Shops im Jahr 2030, mit viel Magenta-Licht, Robotern und glücklichen Kunden, 16:9 Format."
+            </div>
+          </li>
+
+          <li>
+            <span class="detail-title">📊 Programmieren & Excel (Shop Management)</span>
+            Ideal für Shop-Leiter, die Auswertungen machen müssen.
+            <div class="example-box">
+               <em>Prompt:</em> "Ich habe eine Google Tabelle mit Spalte A (Produkt) und Spalte B (Umsatz). Schreibe mir eine Formel, die den Gesamtumsatz nur für Produkte berechnet, die das Wort 'Pixel' enthalten."
+            </div>
+          </li>
+
+          <li>
+            <span class="detail-title">📢 Präsentationen (Meeting Vorbereitung)</span>
+            Strukturierung von Ideen für Pitches.
+            <div class="example-box">
+               <em>Prompt:</em> "Erstelle eine Gliederung für eine 10-Minuten-Präsentation für einen Mittelständler, warum er seine Firmenflotte auf Pixel 10 umstellen sollte. Fokus: Sicherheit (Titan Chip) und Kostenersparnis durch Langlebigkeit."
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Technik & Abos -->
     <div class="section-title"><span class="section-icon">💎</span> Abos & Technik</div>
 
     <div class="card">
@@ -369,8 +451,8 @@
       </div>
     </div>
 
-    <!-- SECTION 3: Praxis & Prompting -->
-    <div class="section-title"><span class="section-icon">🎨</span> Playground & Wünsche</div>
+    <!-- SECTION 4: Playground & Wünsche -->
+    <div class="section-title"><span class="section-icon">🎨</span> Playground</div>
 
     <div class="card">
       <div class="card-header">Rechtliches bei Bildern (z.B. "Banana" Tools) <div class="toggle-icon">+</div></div>
@@ -381,13 +463,20 @@
     </div>
 
     <div class="card">
-      <div class="card-header">Wie "prompte" ich richtig? (Tipps) <div class="toggle-icon">+</div></div>
+      <div class="card-header">Wie "prompte" ich richtig? (Der perfekte Telekom-Prompt) <div class="toggle-icon">+</div></div>
       <div class="card-body">
-        <span class="answer-tag">How-To</span>
+        <span class="answer-tag">Best Practice</span>
         <p>Die Zauberformel: <strong>Rolle + Aufgabe + Kontext + Format</strong>.</p>
-        <div style="background:#f9f9f9; padding:10px; border-left: 3px solid var(--g-blue); margin:10px 0;">
-          "Du bist ein <strong>Marketing-Experte der Telekom</strong> (Rolle). Schreibe eine <strong>E-Mail an einen Geschäftskunden</strong> (Aufgabe) über die Vorteile der <strong>Sicherheitschips im Pixel 10</strong> (Kontext). Halte dich <strong>kurz und nutze Bulletpoints</strong> (Format)."
+        <p>Hier ein Beispiel, das ihr direkt live vorführen könnt (Text kopieren und Gemini vorlesen lassen):</p>
+        
+        <div style="background:#fff0f8; padding:15px; border-radius:12px; border-left: 5px solid var(--t-magenta); margin:15px 0; font-style:italic; color:#333; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
+           "Du bist ein <strong>Telekom-Techniker</strong>, der aber heimlich ein leidenschaftlicher <strong>Shakespeare-Schauspieler</strong> ist (Rolle). <br><br>
+           Erkläre einem skeptischen Kunden, warum das <strong>Pixel 10</strong> dank 5G und Gemini viel besser ist als sein alter Router (Aufgabe). <br><br>
+           Benutze eine <strong>dramatische, altertümliche Sprache</strong> ('Oh, welch Geschwindigkeit!'), erwähne die Farbe <strong>Magenta</strong> als 'Licht der Hoffnung' (Kontext). <br><br>
+           Beende deine Rede mit einem kurzen, coolen <strong>Rap über Glasfaser</strong> (Format)."
         </div>
+        
+        <p style="font-size:0.9rem; margin-top:5px; color:var(--t-magenta);"><em>👉 Tipp: Lass Gemini das Ergebnis mit der Funktion "Vorlesen" vortragen!</em></p>
       </div>
     </div>
 
@@ -410,7 +499,7 @@
       </div>
     </div>
 
-    <!-- SECTION 4: Feedback -->
+    <!-- SECTION 5: Feedback -->
     <div class="feedback-section">
       <h2 style="color:var(--t-magenta); margin-bottom:10px;">Dein Feedback zählt!</h2>
       <p>Wie fandest du das Training heute?</p>
